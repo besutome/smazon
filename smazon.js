@@ -25,12 +25,13 @@ if (Meteor.isServer) {
 
 var aws = Meteor.npmRequire('aws-lib');
 var amazon = Meteor.settings.amazon;
+var options = {"host": "ecs.amazonaws.jp"};
 
-var prodAdv = aws.createProdAdvClient(amazon.id, amazon.secret, amazon.assocId);
+var prodAdv = aws.createProdAdvClient(amazon.id, amazon.secret, amazon.assocId, options);
 
 var options = {SearchIndex: "Books", Keywords: "Javascript"}
 
 prodAdv.call("ItemSearch", options, function(err, result) {
   // console.log(result);
-  console.log(result.Items.MoreSearchResultsUrl);
+  console.log(result.Items);
 })
