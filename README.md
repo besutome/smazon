@@ -13,4 +13,5 @@ $ meteor add juliancwriko:s-jeet
 ```sh
 $ meteor add meteor add czbaker:apac
 $ meteor add meteorhacks:npm
+$ meteor --settings config/settigs.json
 ```

@@ -23,16 +23,14 @@ if (Meteor.isServer) {
 }
 
 
-// config = require('settings');
-var settings = Meteor.settings.aws;
-// var aws = Meteor.npmRequire('aws-lib');
+var aws = Meteor.npmRequire('aws-lib');
+var amazon = Meteor.settings.amazon;
 
-console.log(settings.id);
+var prodAdv = aws.createProdAdvClient(amazon.id, amazon.secret, amazon.assocId);
 
-// var prodAdv = aws.createProdAdvClient(settings.id, settings.secret, settings.assocId);
-//
-// var options = {SearchIndex: "Books", Keywords: "Javascript"}
-//
-// prodAdv.call("ItemSearch", options, function(err, result) {
-//   console.log(result);
-// })
+var options = {SearchIndex: "Books", Keywords: "Javascript"}
+
+prodAdv.call("ItemSearch", options, function(err, result) {
+  // console.log(result);
+  console.log(result.Items.MoreSearchResultsUrl);
+})
