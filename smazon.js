@@ -21,3 +21,18 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
+
+// config = require('settings');
+var settings = Meteor.settings.aws;
+// var aws = Meteor.npmRequire('aws-lib');
+
+console.log(settings.id);
+
+// var prodAdv = aws.createProdAdvClient(settings.id, settings.secret, settings.assocId);
+//
+// var options = {SearchIndex: "Books", Keywords: "Javascript"}
+//
+// prodAdv.call("ItemSearch", options, function(err, result) {
+//   console.log(result);
+// })
