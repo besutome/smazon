@@ -1,0 +1,27 @@
+{
+  "name": "smazon",
+  "version": "1.0.0",
+  "description": "",
+  "main": "smazon.info",
+  "dependencies": {
+    "aws-lib": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "meteor --settings config/settings.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/besutome/smazon.git"
+  },
+  "keywords": [
+    "amazon"
+  ],
+  "author": "besutome",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/besutome/smazon/issues"
+  },
+  "homepage": "http://smazon.info"
+}
